@@ -44,3 +44,52 @@ render() {
         ));
 ``` 
 
+## defaultProps and propTypes
+
+### defaultProps - provides props for a component when a user does not provide those props. Without defaults we would have an error. 
+
+Within the class definition:
+
+```
+class App extends Component {
+  static defaultProps = {
+    recipes: [{
+      title: "Spaghetti",
+      ingredients: ["flour", "water"],
+      instructions: "Mix ingredients",
+      img: "spaghetti.img"
+    }]
+  }
+  render() {
+    return (
+      <div>
+      
+      {this.props.recipes.map(r, index) => (  
+        <Recipe key={index} title={r.title} ingredients={r.ingredients} img={r.img} instructions= {r.instructions}/>
+      )}
+
+      OR
+
+      {this.props.recipes.map(r, index) => (
+        <Recipe key={index} {...r} />
+      )}
+
+      </div>
+    )
+  }
+}
+```
+
+OR
+
+After the class is defined, we can say:
+
+```
+IngredientList.defaultProps = {
+  ingredients: [];
+}
+``` 
+
+### propTypes - development time type checker for props
+
+Installation: npm install --save prop-types
