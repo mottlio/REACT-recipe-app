@@ -93,3 +93,18 @@ IngredientList.defaultProps = {
 ### propTypes - development time type checker for props
 
 Installation: npm install --save prop-types
+
+Use:
+
+```
+import PropTypes from 'prop-types';
+
+class IngredientList extends Component {
+  static propTypes = {
+    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired
+
+  ---> in development, we will have a warning in the console if array of strings not provided
+
+  }
+}
+```
