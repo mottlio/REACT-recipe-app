@@ -30,7 +30,8 @@ class RecipeApp extends Component {
           ingredients: ["2 slices of bread", "1 avocado", "1 tablespoon olive oil", "1 pinch of salt", "pepper"],
           img: "avocado_toast.jpg"
         }
-      ]
+      ],
+      nextRecipeId: 3,
     }
   }
   render() {
